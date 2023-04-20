@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        align-items: RIGHT;
+        justify-content: center;
+        font-family: Arial, sans-serif;
+        background-image: url("pngtree-eid-mubarak-islamic-background-muslim-festival-golden-picture-image_1379554.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 160px;
+        border-radius: 5px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #fffefe;
+        background-color: #000000;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      label {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: #ffffff;
+        background-color: #000000;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      button:hover {
+        background-color: #555;
+      }
+
+      #greeting {
+        display: none;
+        margin-top: 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      #greeting img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #greeting h2 {
+        font-size: 24px;
+        margin-top: 10px;
+        color: #333;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Eid Mubarak from Eng :haswa</h1>
+      <form>
+        <label for="name">Please enter your name:</label>
+        <input type="text" id="name" placeholder="Enter your name here" />
+        <button type="button" onclick="displayGreeting()">Submit</button>
+      </form>
+      <div id="greeting">
+        <img src="eid-greeting.jpg" alt="Eid Greeting Image" />
+        <h2 id="greeting-message"></h2>
+      </div>
+    </div>
+
+    <script>
+      function displayGreeting() {
+        let name = document.getElementById("name").value;
+        let greetingMessage = document.getElementById("greeting-message");
+        let greetingImage = document.getElementById("greeting");
+
+        if (name) {
+          greetingMessage.innerHTML =
+            "كل عام وأنت بخير وعيد فطر مبارك عليك يا " + name;
+          greetingImage.style.display = "block";
+        } else {
+          alert("Please enter your name.");
+        }
+      }
+    </script>
+  </body>
+</html>
